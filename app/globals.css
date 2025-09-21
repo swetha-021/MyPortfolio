@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+
+
+*{
+  font-family: Outfit;
+  /* background-color: #000; */
+}
