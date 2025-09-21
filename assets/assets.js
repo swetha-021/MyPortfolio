@@ -104,22 +104,22 @@
         {
             title: 'Chef Claude',
             description: 'React app using an AI API to generate creative recipes',
-            bgImage: './work-1.png',
+            bgImage: 'work-1.png',
         },
         {
             title: 'ToDo List',
             description: 'A task management app built with PHP and Laravel',
-            bgImage: './work-2.png',
+            bgImage: 'work-2.png',
         },
         {
             title: 'Tenzies',
             description: 'A fun dice-rolling game made with React and JavaScript',
-            bgImage: './work-3.png',
+            bgImage: 'work-3.png',
         },
         {
             title: 'Hangman',
             description: 'A classic Hangman word game built with JavaScript.',
-            bgImage: './work-4.png',
+            bgImage: 'work-4.png',
         },
     ]
 
