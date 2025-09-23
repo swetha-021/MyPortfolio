@@ -40,6 +40,7 @@ const Contact = () => {
     transition={{duration:1}}
     
     id='contact' className='w-full px-[12%] py-10 scroll-mt-20 bg-[#EAE1D2] bg-no-repeat bg-center bg-[length:90%_auto]'>
+      
       <motion.h2 
         initial={{y:-20, opacity:0}}
         whileInView={{y:0,opacity:1}}
