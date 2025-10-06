@@ -33,27 +33,27 @@ const Contact = () => {
 
 
   return (
-    <div className='bg-[#EAE1D2]'>
+    <div className='bg-[#000]'>
 <motion.div
     initial={{opacity:0}}
     whileInView={{opacity:1}}
     transition={{duration:1}}
     
-    id='contact' className='w-full px-[12%] py-10 scroll-mt-20 bg-[#EAE1D2] bg-no-repeat bg-center bg-[length:90%_auto]'>
+    id='contact' className='w-full px-[12%] py-10 scroll-mt-20 bg-no-repeat bg-center bg-[length:90%_auto]'>
       
       <motion.h2 
         initial={{y:-20, opacity:0}}
         whileInView={{y:0,opacity:1}}
         transition={{duration:0.5, delay:0.5}}
       
-      className='text-center text-5xl font-Ovo'>Get in touch</motion.h2>
+      className='text-center text-5xl font-Ovo text-[#D1EEFE]'>Get in touch</motion.h2>
 
       <motion.p
         initial={{opacity:0}}
         whileInView={{opacity:1}}
         transition={{duration:0.5, delay:0.7}}
       
-      className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-[15px]'>
+      className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-[15px] text-white'>
         Let’s connect! Feel free to reach out if you’d like to chat or work together.
       </motion.p>
 
@@ -88,9 +88,10 @@ const Contact = () => {
         <motion.button
         whileHover={{scale:1.05}}
         transition={{duration:0.3}}
-        type='submit' className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black text-white rounded-full mx-auto hover:bg-black duration-500 cursor-pointer -mt-3'>
-            Submit now
-            <Image src={assets.right_arrow_white} alt='' className='w-4'/>
+        type='submit' className='py-3 px-8 w-max flex items-center justify-between gap-2bg-[#D1EEFE] bg-gradient-to-r from-[#D1EEFE] to-[#3197bc] rounded-full mx-auto hover:bg-black duration-500 cursor-pointer -mt-3'>
+        Submit now
+        <Image src={assets.right_arrow_white} alt='' className='w-4 ml-3'/>
+        
         </motion.button>
         <p className='mt-4'>{result}</p>
       </motion.form>

@@ -33,7 +33,7 @@ const Navbar = () => {
         </a>
 
         
-        <ul className={`hidden md:flex item-center gap-6 lg:gap-8 rounded-full px-10 py-1 ${isScroll ? "" : " bg-[#CC8358] text-black shadow-sm bg-opacity-50 "}` }>
+        <ul className={`hidden md:flex item-center gap-6 lg:gap-8 rounded-full px-10 py-1 ${isScroll ? "text-white" : " bg-[#D1EEFE] text-black shadow-sm bg-opacity-50"}` }>
             <li><a className="font-Ovo" href="#top">Home</a></li>
             <li><a className="font-Ovo" href="#about">About me</a></li>
             <li><a className="font-Ovo" href="#experience">Experience</a></li>   
@@ -41,10 +41,16 @@ const Navbar = () => {
             <li><a className="font-Ovo" href="#contact">Contact me</a></li>   
         </ul>
 
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-4 text-[#D1EEFE]'>
 
-            <a href="https://www.linkedin.com/in/swethaprakash21/" target="_blank">
-                <Image src={assets.arrow_icon} alt="contact me" className='w-25 h-14' />
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/swethaprakash21"
+                className="flex items-center gap-2 text-[#D1EEFE]"
+            >
+                <Image src={assets.linkedin} alt="LinkedIn" width={24} height={24}  />
+                <span>LinkedIn</span>
             </a>
 
             <button className='block md:hidden ml-3' onClick={openMenu}>

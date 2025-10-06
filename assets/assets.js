@@ -15,7 +15,7 @@
     import logo_dark from './logo_dark.png';
     import mail_icon from './mail_icon.png';
     import mail_icon_dark from './mail_icon_dark.png';
-    import profile_img from './profile-img.png';
+    import profile_img from './swetha1.png';
     import download_icon from './download-icon.png';
     import hand_icon from './hand-icon.png';
     import header_bg_color from './header-bg-color.png';
@@ -42,7 +42,7 @@
     import bing from './Bing-icon.jpeg'
     import linkedin from './linkedin_icon.png'
     import github from './github-icon.png'
-    import swetha from './swetha1.png'
+    import swetha from './profile-img1.png'
     import android from './android.png'
     import springboot from './springboot.png'
     import flask from './flask.png'
@@ -105,21 +105,26 @@
             title: 'Chef Claude',
             description: 'React app using an AI API to generate creative recipes',
             bgImage: 'work-1.png',
+            link:'https://github.com/swetha-021/',
+    
         },
         {
             title: 'ToDo List',
             description: 'A task management app built with PHP and Laravel',
             bgImage: 'work-2.png',
+            link:'https://github.com/swetha-021/toDO',
         },
         {
             title: 'Tenzies',
             description: 'A fun dice-rolling game made with React and JavaScript',
             bgImage: 'work-3.png',
+            link:'https://github.com/swetha-021/Tenzies',
         },
         {
             title: 'Hangman',
             description: 'A classic Hangman word game built with JavaScript.',
             bgImage: 'work-4.png',
+            link:'https://github.com/swetha-021/Hangman',
         },
     ]
 

@@ -5,7 +5,7 @@ import { motion } from 'motion/react'
 
 const About = () => {
   return (
-    <div className="bg-[#EAE1D2]">
+    <div className="bg-[#000]">
       <motion.div
         id="about"
         className="w-full px-4 sm:px-8 lg:px-[12%] py-10 scroll-mt-10"
@@ -15,7 +15,7 @@ const About = () => {
       >
         {/* Title */}
         <motion.h2
-          className="text-center text-4xl sm:text-5xl font-Ovo"
+          className="text-center text-4xl sm:text-5xl font-Ovo text-[#D1EEFE]"
           initial={{ y: -20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
@@ -41,7 +41,7 @@ const About = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-center sm:text-left max-w-full sm:max-w-2xl mx-auto  mb-10 font-Ovo text-[15px] px-2"
+              className="text-center sm:text-left max-w-full sm:max-w-2xl mx-auto  mb-10 font-Ovo text-[15px] px-2 text-white"
             >
               I build reliable and user-friendly full-stack solutions. My work is
               fueled by curiosity and a passion for creating innovative,
@@ -56,25 +56,30 @@ const About = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              {infoList.map(({ icon, title, description }, index) => (
-                <motion.li
-                  key={index}
-                  className="border border-gray-400 rounded-lg px-6 py-6 
-                             cursor-pointer hover:bg-gradient-to-b 
-                             hover:from-[#CC8358] hover:to-[#EAE1D2] 
-                             hover:-translate-y-1 duration-500 hover:shadow-black 
-                             text-center sm:text-left"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Image
-                    className="w-7 mt-3 mx-auto sm:mx-0"
-                    src={icon}
-                    alt={title}
-                  />
-                  <h3 className="my-4 font-semibold">{title}</h3>
-                  <p className="text-sm break-words">{description}</p>
-                </motion.li>
-              ))}
+           {infoList.map(({ icon, title, description }, index) => (
+  <motion.li
+    key={index}
+    className="group border border-[#D1EEFE] rounded-lg px-6 py-6 
+               cursor-pointer hover:bg-gradient-to-b 
+               hover:from-[#D1EEFE] hover:to-[#3197bc] 
+               hover:-translate-y-1 duration-500 hover:shadow-black 
+               text-center sm:text-left"
+    whileHover={{ scale: 1.05 }}
+  >
+    <Image
+      className="w-7 mt-3 mx-auto sm:mx-0"
+      src={icon}
+      alt={title}
+    />
+    <h3 className="my-4 font-semibold text-[#D1EEFE] group-hover:text-black transition-colors duration-100">
+      {title}
+    </h3>
+    <p className="text-sm break-words text-white group-hover:text-black transition-colors duration-100">
+      {description}
+    </p>
+  </motion.li>
+))}
+
             </motion.ul>
 
             {/* Tools Section */}
@@ -82,7 +87,7 @@ const About = () => {
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="my-6 text-gray-700 font-Ovo"
+              className="my-6 text-[#D1EEFE] font-Ovo"
             >
               Tools I use
             </motion.h4>
@@ -91,14 +96,14 @@ const About = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              className="flex flex-wrap items-center gap-3 sm:gap-5"
+              className="flex flex-wrap items-center gap-3 sm:gap-5 "
             >
               {toolsData.map((tool, index) => (
                 <motion.li
                   whileHover={{ scale: 1.1 }}
                   className="flex items-center justify-center w-12 sm:w-10 aspect-square 
-                             border border-gray-400 rounded-lg cursor-pointer 
-                             hover:-translate-y-1 duration-500"
+                             border border-[#D1EEFE] text-white rounded-lg cursor-pointer 
+                             hover:-translate-y-1 duration-500 "
                   key={index}
                 >
                   <Image
@@ -111,9 +116,8 @@ const About = () => {
             </motion.ul>
           </motion.div>
 
-          {/* Image on large screens only */}
           <motion.div
-            className="w-72 sm:w-90 rounded-3xl hidden lg:block -mr-20 mb-40"
+            className="relative w-72 sm:w-90 h-[300px]  hidden lg:block -mr-20 mb-40 overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -121,9 +125,12 @@ const About = () => {
             <Image
               src={assets.swetha}
               alt="user"
-              className="rounded-3xl h-[400px] w-[400px]"
+              fill
+              className="object-cover object-top"
             />
           </motion.div>
+
+
         </motion.div>
       </motion.div>
     </div>
