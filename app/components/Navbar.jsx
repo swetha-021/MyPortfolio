@@ -54,7 +54,7 @@ const Navbar = () => {
             </a>
 
             <button className='block md:hidden ml-3' onClick={openMenu}>
-                <Image src={assets.menu_black} alt='' className='w-6' />
+                <Image src={assets.menu_white} alt='' className='w-6' />
             </button>
         </div>
 
