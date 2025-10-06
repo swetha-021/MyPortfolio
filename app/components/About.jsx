@@ -15,7 +15,7 @@ const About = () => {
       >
         {/* Title */}
         <motion.h2
-          className="text-center text-4xl sm:text-5xl font-Ovo text-[#D1EEFE]"
+          className="text-center text-4xl sm:text-5xl font-Ovo text-[#D1EEFE] mb-5"
           initial={{ y: -20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
