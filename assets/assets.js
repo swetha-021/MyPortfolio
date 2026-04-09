@@ -100,15 +100,15 @@
 
     export const workData = [
         {
-            title: 'Quant Art Generator',
-            description: 'Quantum entropy powered art generator using CURBy API',
+            title: 'Quantum Canvas',
+            description: 'Quantum Entropy Art Generator using CURBy API',
             bgImage: 'work-1.png',
             link:'https://github.com/swetha-021/Quantum-art-generator',
     
         },
         {
             title: 'Inventory',
-            description: 'Personalized inventory management using an LLM API',
+            description: 'LLM-Based Inventory Management Platform',
             bgImage: 'work-2.png',
             link:'https://github.com/swetha-021/Inventory-Management',
         },
