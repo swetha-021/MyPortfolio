@@ -108,7 +108,7 @@
         },
         {
             title: 'Inventory',
-            description: 'LLM-Based Inventory Management Platform',
+            description: 'Smart Inventory Management Platform',
             bgImage: 'work-2.png',
             link:'https://github.com/swetha-021/Inventory-Management',
         },
