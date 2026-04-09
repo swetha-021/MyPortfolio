@@ -127,8 +127,8 @@
     ]
 
     export const experienceData = [
-        { icon: assets.uplifty, title: 'Uplifty AI', position: 'Team Lead, iOS & Android App Developer, UI/UX Developer', location: 'Austin, TX ' },
-        { icon: assets.ghi, title: 'Global Health Impact', position: 'Full Stack Developer', location: 'Binghamton, NY' },
+        { icon: assets.uplifty, title: 'Uplifty AI', position: 'Software Engineer', location: 'Austin, TX ' },
+        { icon: assets.ghi, title: 'Global Health Impact', position: 'Software Engineer', location: 'Binghamton, NY' },
         { icon: assets.optum, title: 'Optum', position: 'Java Backend Developer', location: 'Hyderabad, India' },
         { icon: assets.bing, title: 'Binghamton University', position: 'Teaching Assistant', location: 'Binghamton, NY' },
     ]
