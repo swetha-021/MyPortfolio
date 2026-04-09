@@ -100,17 +100,17 @@
 
     export const workData = [
         {
-            title: 'Quantum Art Generator',
-            description: 'React Quantum entropy powered art generator using CURBy API',
+            title: 'Quant Art Generator',
+            description: 'Quantum entropy powered art generator using CURBy API',
             bgImage: 'work-1.png',
             link:'https://github.com/swetha-021/Quantum-art-generator',
     
         },
         {
-            title: 'ToDo List',
-            description: 'A task management app built with PHP and Laravel',
+            title: 'Inventory',
+            description: 'Personalized inventory management using an LLM API',
             bgImage: 'work-2.png',
-            link:'https://github.com/swetha-021/toDO',
+            link:'https://github.com/swetha-021/Inventory-Management',
         },
         {
             title: 'Tenzies',
@@ -124,12 +124,7 @@
             bgImage: 'work-4.png',
             link:'https://github.com/swetha-021/Hangman',
         },
-        {
-            title: 'Hangman',
-            description: 'A classic Hangman word game built with JavaScript.',
-            bgImage: 'work-4.png',
-            link:'https://github.com/swetha-021/Hangman',
-        },
+        
     ]
 
     export const experienceData = [
