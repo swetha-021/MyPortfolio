@@ -100,10 +100,10 @@
 
     export const workData = [
         {
-            title: 'Chef Claude',
-            description: 'React app using an AI API to generate creative recipes',
+            title: 'Quantum Art Generator',
+            description: 'React Quantum entropy powered art generator using CURBy API',
             bgImage: 'work-1.png',
-            link:'https://github.com/swetha-021/',
+            link:'https://github.com/swetha-021/Quantum-art-generator',
     
         },
         {
@@ -117,6 +117,12 @@
             description: 'A fun dice-rolling game made with React and JavaScript',
             bgImage: 'work-3.png',
             link:'https://github.com/swetha-021/Tenzies',
+        },
+        {
+            title: 'Hangman',
+            description: 'A classic Hangman word game built with JavaScript.',
+            bgImage: 'work-4.png',
+            link:'https://github.com/swetha-021/Hangman',
         },
         {
             title: 'Hangman',
