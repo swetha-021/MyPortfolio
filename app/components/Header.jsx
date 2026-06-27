@@ -51,7 +51,7 @@ const Header = () => {
               whileInView={{opacity:1}}
               transition={{duration:0.6, delay:0.7}}
               className='w-10/12 font-Ovo mt-5 text-xl lg:text-[15px] mx-auto lg:mx-0 lg:text-left text-white'>
-              I'm a passionate software engineer open to relocation and actively seeking full-time opportunities. I am authorized to work in the U.S. and am eligible for CPT during studies and OPT/OPT-STEM for up to 3 years post-graduation.
+              I'm a passionate software engineer open to relocation and actively seeking full-time opportunities. I am authorized to work in the U.S. and am eligible for OPT/OPT-STEM for up to 3 years.
             </motion.p>
 
             {/* Buttons */}
