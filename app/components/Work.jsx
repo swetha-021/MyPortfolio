@@ -1,78 +1,148 @@
-import { assets, workData } from '@/assets/assets'
-import Image from 'next/image'
-import React from 'react'
-import {motion} from 'motion/react'
+'use client'
+
+import { workData } from '@/assets/assets'
+import React, { useState } from 'react'
+import { motion, useReducedMotion } from 'motion/react'
+
+const pad = (n) => String(n + 1).padStart(2, '0')
 
 const Work = () => {
-    return (
-    <div className='bg-[#000]'>
- <motion.div
-    initial={{opacity:0}}
-    whileInView={{opacity:1}}
-    transition={{duration:1}}
-    
-    id='work' className='w-full px-[12%] py-10 scroll-mt-10'>
-       
-        <motion.h2 
-        initial={{y: -20, opacity:0}}
-        whileInView={{y:0,opacity:1}}
-        transition={{duration:0.5, delay:0.5}}
-        className='text-center text-5xl font-Ovo text-[#D1EEFE]'>My Works</motion.h2>
+  const [active, setActive] = useState(0)
+  const reduceMotion = useReducedMotion()
+  const duration = reduceMotion ? 0 : 0.5
 
-        <motion.p
-        initial={{opacity:0}}
-        whileInView={{opacity:1}}
-        transition={{duration:0.5, delay:0.7}}
-        className='text-center max-w-2xl mx-auto mt-5 font-Ovo text-[15px] text-white'>
-        These projects capture my journey in building software. From small ideas to complete applications, each one has helped me learn and improve.
-        </motion.p>
+  return (
+    <div id="work" className="bg-[#ffebac]">
+      <div className="w-full px-[8%] md:px-[12%] pt-8 pb-16">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-Ovo text-4xl text-black sm:text-5xl">
+            Selected projects
+          </h2>
+        </div>
 
-        <motion.div
-        initial={{opacity:0}}
-        whileInView={{opacity:1}}
-        transition={{duration:0.6, delay:0.9}}
-        className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-6 gap-5 '>
-            {workData.map((project, index)=>(
-                <motion.div
-                whileHover={{scale:1.05}}
-                transition={{duration:0.2}}
-                key={index} style={{backgroundImage:`url(${project.bgImage})`}} className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group'>
-                    {/* <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full"> */}
-                    {/* <div className='bg-[#44b1d8] w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7'> */}
-                    <a
+        <div
+          className="mx-auto mt-10 flex max-w-6xl flex-col gap-2 md:h-[30rem] md:flex-row"
+          aria-label="Selected projects"
+        >
+          {workData.map((project, index) => {
+            const open = active === index
+
+            return (
+              <div
+                key={project.title}
+                onMouseEnter={() => {
+                  if (window.matchMedia('(min-width: 768px)').matches) {
+                    setActive(index)
+                  }
+                }}
+                className={`overflow-hidden rounded-xl border border-[#2f2f34] bg-[#950434] transition-[flex-grow,flex-basis,height] ease-in-out md:h-full md:min-w-0 ${
+                  open
+                    ? 'flex-[1_1_auto] md:flex-[1_1_0%]'
+                    : 'h-14 flex-[0_0_3.5rem] md:h-full md:flex-[0_0_72px]'
+                }`}
+                style={{ transitionDuration: `${duration * 1000}ms` }}
+              >
+                {open ? (
+                  <motion.article
+                    id={`work-panel-${index}`}
+                    aria-expanded="true"
+                    initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: reduceMotion ? 0 : 0.35,
+                      delay: reduceMotion ? 0 : 0.18,
+                      ease: 'easeOut',
+                    }}
+                    className="grid h-full min-h-[22rem] grid-cols-1 gap-6 p-5 md:min-h-0 md:grid-cols-2 md:gap-8 md:p-7"
+                  >
+                    <div className="flex min-w-0 flex-col">
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-[#ffebac]/80">
+                        {project.category} · {project.tech[0]}
+                      </p>
+                      <h3 className="mt-3 font-Ovo text-3xl text-[#ffebac] md:text-4xl">
+                        {project.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-6 text-[#ffebac] md:text-[15px]">
+                        {project.description}
+                      </p>
+                      <ul className="mt-5 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
+                        {project.features.map((feature) => (
+                          <li
+                            key={feature}
+                            className="text-sm leading-6 text-[#ffebac]"
+                          >
+                            <span className="mr-2 text-[#2f2f34]">•</span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                      <ul className="mt-5 flex flex-wrap gap-2">
+                        {project.tech.map((item) => (
+                          <li
+                            key={item}
+                            className="rounded-full border border-[#2f2f34] bg-[#2f2f34] px-3 py-1 text-xs text-[#ffebac]"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className='bg-[#44b1d8] w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7'
+                        className="mt-6 inline-flex w-max items-center gap-2 rounded-full bg-[#2f2f34] px-5 py-2 text-sm text-[#ffebac] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffebac]"
+                      >
+                        View on GitHub ↗
+                      </a>
+                    </div>
+
+                    <div className="min-h-[12rem] overflow-hidden rounded-lg border border-[#2f2f34] bg-[#2f2f34] p-2 md:min-h-0">
+                      <div
+                        className="h-full min-h-[12rem] rounded-md bg-cover bg-center md:min-h-full"
+                        style={{ backgroundImage: `url(/${project.bgImage})` }}
+                        role="img"
+                        aria-label={`${project.title} preview`}
+                      />
+                    </div>
+                  </motion.article>
+                ) : (
+                  <button
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls={`work-panel-${index}`}
+                    onClick={() => setActive(index)}
+                    className="flex h-full w-full cursor-pointer items-center justify-between gap-4 px-4 text-left text-[#ffebac] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ffebac] md:flex-col md:px-0 md:py-4"
+                  >
+                    <span className="text-xs tracking-[0.16em] text-[#ffebac]/80">
+                      {pad(index)}
+                    </span>
+                    <span className="min-w-0 flex-1 truncate text-sm md:flex-none md:rotate-[-90deg] md:whitespace-nowrap md:text-base">
+                      {project.title}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#2f2f34] bg-[#2f2f34] text-sm text-[#ffebac]"
                     >
-                        <div>
-                            <h2 className='font-semibold'>{project.title}</h2>
-                            <p className='text-sm text-white'>{project.description}</p>
-                        </div>
+                      +
+                    </span>
+                  </button>
+                )}
+              </div>
+            )
+          })}
+        </div>
 
-                        <div className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-white transition'>
-                            <Image src={assets.send_icon} alt='send icon' className='w-5'/>
-                        </div>
-                        
-                    {/* </div> */}
-                    </a>
-                </motion.div>
-            ))}
-        </motion.div>
-
-        <motion.a
-        initial={{opacity:0}}
-        whileInView={{opacity:1}}
-        transition={{duration:0.5, delay:0.7}}
-        href="https://github.com/swetha-021" target="_blank" className='w-max flex items-center justify-center gap-2 text-black border-[0.5px] bg-[#D1EEFE] bg-gradient-to-r from-[#D1EEFE] to-[#3197bc] rounded-full py-3 px-10 mx-auto my-5 duration-500 bg-black'>
-            Show more <Image src={assets.right_arrow_bold} alt='Right arrow' className='w-4'/>
-        </motion.a>
-
-    </motion.div>
+        <a
+          href="https://github.com/swetha-021"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mx-auto my-8 flex w-max items-center justify-center gap-2 rounded-full bg-black px-10 py-3 text-[#ffebac] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        >
+          Show more
+        </a>
+      </div>
     </div>
-   
-    )
-
+  )
 }
 
 export default Work

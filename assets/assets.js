@@ -101,45 +101,162 @@
     export const workData = [
         {
             title: 'Quantum Canvas',
-            description: 'Quantum Entropy Art Generator using CURBy API',
+            category: 'Generative',
+            description: 'Quantum Entropy Art Generator using CURBy API. True quantum randomness drives each composition, so every piece is unique and cannot be replayed from a classic seed.',
             bgImage: 'work-1.png',
             link:'https://github.com/swetha-021/Quantum-art-generator',
-    
+            tech: ['Python', 'CURBy API', 'JavaScript'],
+            features: [
+                'Entropy sampled from the CURBy quantum source',
+                'Procedural visuals from non-classical randomness',
+                'Exportable generated artwork',
+                'Lightweight generator workflow',
+            ],
         },
         {
             title: 'Inventory',
-            description: 'Smart Inventory Management Platform',
+            category: 'Full-stack',
+            description: 'Smart Inventory Management Platform. Tracks stock, updates, and catalog data in one place so teams can see what they have without a spreadsheet chase.',
             bgImage: 'work-2.png',
             link:'https://github.com/swetha-021/Inventory-Management',
+            tech: ['JavaScript', 'React', 'REST APIs'],
+            features: [
+                'Catalog and stock tracking',
+                'Create, update, and retire items',
+                'REST-backed data flow',
+                'Dashboard-style overview',
+            ],
         },
         {
             title: 'Tenzies',
-            description: 'A fun dice-rolling game made with React and JavaScript',
+            category: 'Game',
+            description: 'A fun dice-rolling game made with React and JavaScript. Hold matching dice, roll the rest, and race to lock a full set of the same value.',
             bgImage: 'work-3.png',
             link:'https://github.com/swetha-021/Tenzies',
+            tech: ['React', 'JavaScript'],
+            features: [
+                'Hold and re-roll individual dice',
+                'Win state when all faces match',
+                'Client-side game loop in React',
+                'Lightweight, no backend required',
+            ],
         },
         {
             title: 'Hangman',
-            description: 'A classic Hangman word game built with JavaScript.',
+            category: 'Game',
+            description: 'A classic Hangman word game built with JavaScript. Guess letters, watch the puzzle fill in, and see remaining lives update as you play.',
             bgImage: 'work-4.png',
             link:'https://github.com/swetha-021/Hangman',
+            tech: ['JavaScript', 'HTML', 'CSS'],
+            features: [
+                'Letter-by-letter guessing',
+                'Lives and wrong-guess tracking',
+                'Word puzzle state on the page',
+                'Playable in the browser',
+            ],
         },
         
     ]
 
     export const experienceData = [
-        { icon: assets.uplifty, title: 'Uplifty AI', position: 'Software Engineer', location: 'Austin, TX ' },
-        { icon: assets.ghi, title: 'Global Health Impact', position: 'Software Engineer', location: 'Binghamton, NY' },
-        { icon: assets.optum, title: 'Optum', position: 'Java Backend Developer', location: 'Hyderabad, India' },
-        { icon: assets.bing, title: 'Binghamton University', position: 'Teaching Assistant', location: 'Binghamton, NY' },
+        {
+            icon: assets.uplifty,
+            company: 'Uplifty AI',
+            position: 'Software Engineer',
+            kind: 'Experience',
+            year: '2025',
+            dates: 'Aug 2025 – Dec 2025',
+            duration: '5 months',
+            location: 'Austin, TX · Remote',
+            bullets: [
+                'Shipped 17 features, including authentication flows, community feeds, and personalized dashboards, for an AI-driven student community platform using React Native.',
+                'Led product engineering on the event feed redesign, using user testing to refine location- and interest-based personalization that improved content relevance and engagement.',
+                'Integrated Python RESTful APIs with Supabase PostgreSQL using async request handling, error handling, and client-server synchronization in a CI/CD agile environment.',
+            ],
+            skills: ['React Native', 'Python', 'Supabase', 'PostgreSQL', 'CI/CD'],
+        },
+        {
+            icon: assets.ghi,
+            company: 'Global Health Impact Project',
+            position: 'Software Engineer',
+            kind: 'Experience',
+            year: '2025',
+            dates: 'Jan 2025 – Aug 2025',
+            duration: '8 months',
+            location: 'New York, United States · Remote',
+            bullets: [
+                'Built data pipelines and geospatial visualization tools for a WHO-linked global health analytics platform, mapping 20,000+ medicine access records across 50+ countries — Asia (71%), Africa (23%), and South America (6%) — for pharma stakeholders.',
+                'Owned end-to-end implementation of interactive geospatial maps using React Leaflet, translating raw coordinate data into regional health insight dashboards with third-party API integrations and Tailwind CSS.',
+                'Collaborated with a global team of 20+ developers on system design and distributed query optimization, building scalable RESTful APIs for high-performance analytics on a fault-tolerant data infrastructure.',
+            ],
+            skills: ['React.js', 'React Leaflet', 'Tailwind CSS', 'SQL', 'REST APIs'],
+        },
+        {
+            icon: assets.bing,
+            company: 'Binghamton University',
+            position: 'Teaching Assistant',
+            kind: 'Experience',
+            year: '2024',
+            dates: 'Jan 2024 – Jul 2025',
+            duration: '1 yr 7 months',
+            location: 'New York, United States · On-site',
+            bullets: [
+                'Provided instructional support, grading, curriculum design, and office hours for a Python programming course with 300+ students, reinforcing core concepts including data structures, packaging, and data visualization with Matplotlib, Pandas, and Tableau.',
+            ],
+            skills: ['Python', 'NumPy', 'Matplotlib', 'Pandas', 'Tableau'],
+        },
+        {
+            icon: assets.optum,
+            company: 'Optum',
+            position: 'Java Backend Developer',
+            kind: 'Experience',
+            year: '2023',
+            dates: 'Jun 2023 – Aug 2023',
+            duration: '3 months',
+            location: 'Hyderabad, India · On-site',
+            bullets: [
+                'Designed Spring Boot microservices for a healthcare reimbursement platform, keeping financial transaction workflows consistent and reliable while handling sensitive patient and payer data.',
+                'Built and optimized high-throughput RESTful APIs for reimbursement processing pipelines, improving system performance and delivery accuracy with comprehensive unit test coverage.',
+                'Implemented fault-tolerant logging, monitoring, and telemetry using Aspect-Oriented Programming (AOP), reducing Mean Time to Resolution (MTTR) by 78% and improving distributed-system observability.',
+            ],
+            skills: ['Java', 'Spring Boot', 'AOP', 'REST APIs'],
+        },
     ]
 
-    export const infoList = [
-        { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'Java, Python, C++, HTML, CSS, JavaScript React Js, Next Js, React Native' },
-        { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Libraries & Frameworks', description: 'Spring Boot, Flask, React.js, Next.js, React Native' },
-        { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'Masters in Computer Science - Binghamton University' },
+    export const education = [
+        {
+            degree: 'M.S. in Computer Science',
+            school: 'Binghamton University',
+        },
+        {
+            degree: 'B.Tech in Computer Science',
+            school: 'SASTRA University',
+        },
     ];
 
-    export const toolsData = [
-        assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git,assets.postman,assets.android,assets.springboot,assets.flask,assets.xampp,
+    export const skillCategories = [
+        {
+            title: 'AI & LLM',
+            skills: ['Prompt Engineering', 'Chain-of-Thought', 'Few-Shot Prompting', 'Structured Outputs', 'Tool Calling', 'RAG', 'Multi-Agent Workflows', 'LLM Evaluation', 'LangGraph', 'LangChain', 'MCP'],
+        },
+        {
+            title: 'Languages',
+            skills: ['Python', 'Java', 'TypeScript', 'JavaScript', 'SQL', 'C++'],
+        },
+        {
+            title: 'Backend & Integrations',
+            skills: ['FastAPI', 'Flask', 'Django', 'Spring Boot', 'Node.js', 'REST APIs', 'Webhooks', 'Async Python'],
+        },
+        {
+            title: 'Databases',
+            skills: ['PostgreSQL', 'Supabase', 'MongoDB', 'Neo4j', 'MSSQL'],
+        },
+        {
+            title: 'Cloud & DevOps',
+            skills: ['AWS', 'Azure', 'Docker', 'Git', 'CI/CD', 'Postman'],
+        },
+        {
+            title: 'ML',
+            skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Pandas'],
+        },
     ];
