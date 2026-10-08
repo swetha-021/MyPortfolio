@@ -7,3 +7,21 @@
   font-family: Outfit;
   /* background-color: #000; */
 }
+
+.extras-list {
+  scrollbar-width: thin;
+  scrollbar-color: #2f2f34 #ffebac;
+}
+
+.extras-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.extras-list::-webkit-scrollbar-track {
+  background: #ffebac;
+}
+
+.extras-list::-webkit-scrollbar-thumb {
+  background: #2f2f34;
+  border-radius: 999px;
+}

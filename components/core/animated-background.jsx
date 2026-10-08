@@ -33,7 +33,7 @@ export function AnimatedBackground({
     const interactionProps = enableHover
       ? {
           onMouseEnter: () => handleSetActiveId(id),
-          onMouseLeave: () => handleSetActiveId(null),
+          onMouseLeave: () => handleSetActiveId(defaultValue ?? null),
         }
       : {
           onClick: (event) => {
@@ -46,7 +46,7 @@ export function AnimatedBackground({
       child,
       {
         key: child.key ?? index,
-        className: cn('relative inline-flex', child.props.className),
+        className: cn('relative', child.props.className),
         'data-checked': activeId === id ? 'true' : 'false',
         ...interactionProps,
       },
@@ -55,15 +55,14 @@ export function AnimatedBackground({
           {activeId === id && (
             <motion.div
               layoutId={`background-${uniqueId}`}
-              className={cn('absolute inset-0', className)}
+              className={cn('pointer-events-none absolute inset-0', className)}
               transition={transition}
-              initial={{ opacity: defaultValue ? 1 : 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
             />
           )}
         </AnimatePresence>
-        <span className="relative z-10">{child.props.children}</span>
+        <div className="relative z-10 w-full">{child.props.children}</div>
       </>
     )
   })

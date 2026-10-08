@@ -7,13 +7,12 @@ import { motion } from "motion/react"
 const Header = () => {
   return (
     <div id="top" className="relative h-svh min-h-svh overflow-hidden bg-[#ffebac]">
-      <div className="mx-auto flex h-full w-11/12 max-w-6xl flex-col items-center justify-end gap-4 pt-20 pb-10 lg:flex-row lg:items-end lg:text-left">
-
+      <div className="mx-auto flex h-full w-11/12 max-w-6xl flex-col pt-20 pb-10">
         <motion.div
           initial={{ y: -30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="pointer-events-none absolute inset-x-0 top-24 hidden overflow-visible justify-center lg:flex"
+          className="hidden overflow-visible justify-center lg:flex"
         >
           <TextShimmer
             as="h1"
@@ -25,59 +24,61 @@ const Header = () => {
           </TextShimmer>
         </motion.div>
 
-        <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-          className="relative z-10 hidden shrink-0 lg:block"
-        >
-          <Image
-            src={assets.profile_img}
-            alt="Swetha"
-            className="h-[min(62vh,28rem)] w-auto rounded-lg object-cover object-top"
-          />
-        </motion.div>
-
-        <div className="relative z-10 flex w-full max-w-xl flex-col items-center gap-4 lg:items-start">
-          <motion.h3
-            initial={{ y: -20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-2 mb-1 flex items-end gap-2 text-center font-Ovo text-2xl text-black lg:text-left"
+        <div className="mt-6 flex min-h-0 flex-1 flex-col items-center justify-center gap-8 lg:flex-row lg:items-center lg:justify-center lg:text-left">
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+            className="hidden shrink-0 lg:block"
           >
-            Hi, I&apos;m Swetha!
-          </motion.h3>
+            <Image
+              src={assets.profile_img}
+              alt="Swetha"
+              className="h-[min(48vh,22rem)] w-auto rounded-lg object-cover object-top"
+            />
+          </motion.div>
 
-          <motion.p
-            initial={{ y: -20, opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-2 font-Ovo text-xl text-black lg:mx-0 lg:text-left lg:text-[15px]"
-          >
-            I&apos;m a passionate software engineer open to relocation and actively seeking full-time opportunities. I am authorized to work in the U.S. and am eligible for OPT/OPT-STEM for up to 3 years.
-          </motion.p>
-
-          <div className="mt-4 flex flex-col items-center gap-4 sm:flex-row">
-            <motion.a
-              initial={{ y: 30, opacity: 0 }}
+          <div className="flex w-full max-w-xl flex-col items-center gap-4 lg:items-start">
+            <motion.h3
+              initial={{ y: -20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              href="#contact"
-              className="flex items-center gap-2 rounded-full border border-black bg-black px-8 py-2 text-[#ffebac]"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-2 mb-1 flex items-end gap-2 text-center font-Ovo text-2xl text-black lg:text-left"
             >
-              contact me <Image src={assets.right_arrow_white} alt="" className="w-4" />
-            </motion.a>
+              Hi, I&apos;m Swetha!
+            </motion.h3>
 
-            <motion.a
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              href="/Swetha_Resume.pdf"
-              download
-              className="flex items-center gap-2 rounded-full border border-black px-8 py-2 text-black"
+            <motion.p
+              initial={{ y: -20, opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="mt-2 font-Ovo text-xl text-black lg:mx-0 lg:text-left lg:text-[15px]"
             >
-              My resume <Image src={assets.download_icon} alt="" className="w-5 brightness-0" />
-            </motion.a>
+              I&apos;m a passionate software engineer open to relocation and actively seeking full-time opportunities. I am authorized to work in the U.S. and am eligible for OPT/OPT-STEM for up to 3 years.
+            </motion.p>
+
+            <div className="mt-4 flex flex-col items-center gap-4 sm:flex-row">
+              <motion.a
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1 }}
+                href="#contact"
+                className="flex items-center gap-2 rounded-full border border-black bg-black px-8 py-2 text-[#ffebac]"
+              >
+                contact me <Image src={assets.right_arrow_white} alt="" className="w-4" />
+              </motion.a>
+
+              <motion.a
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                href="/Swetha_Resume.pdf"
+                download
+                className="flex items-center gap-2 rounded-full border border-black px-8 py-2 text-black"
+              >
+                My resume <Image src={assets.download_icon} alt="" className="w-5 brightness-0" />
+              </motion.a>
+            </div>
           </div>
         </div>
       </div>

@@ -53,7 +53,7 @@ const Work = () => {
                       delay: reduceMotion ? 0 : 0.18,
                       ease: 'easeOut',
                     }}
-                    className="grid h-full min-h-[22rem] grid-cols-1 gap-6 p-5 md:min-h-0 md:grid-cols-2 md:gap-8 md:p-7"
+                    className="grid h-full min-h-[22rem] grid-cols-1 gap-6 overflow-y-auto p-5 md:min-h-0 md:grid-cols-[1fr_minmax(220px,320px)] md:gap-8 md:overflow-hidden md:p-7"
                   >
                     <div className="flex min-w-0 flex-col">
                       <p className="text-[11px] uppercase tracking-[0.18em] text-[#ffebac]/80">
@@ -76,33 +76,42 @@ const Work = () => {
                           </li>
                         ))}
                       </ul>
-                      <ul className="mt-5 flex flex-wrap gap-2">
-                        {project.tech.map((item) => (
-                          <li
-                            key={item}
-                            className="rounded-full border border-[#2f2f34] bg-[#2f2f34] px-3 py-1 text-xs text-[#ffebac]"
-                          >
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+                    </div>
+
+                    <div className="flex h-full min-h-[10rem] flex-col rounded-lg border border-[#2f2f34] bg-black p-6 md:min-h-0 md:justify-between">
+                      <div>
+                        <p className="text-[11px] uppercase tracking-[0.18em] text-[#ffebac]/80">
+                          Tech stack
+                        </p>
+                        <ul className="mt-3">
+                          {project.tech.map((item, techIndex) => (
+                            <li
+                              key={item}
+                              className={`py-3 text-left text-sm text-[#ffebac] ${
+                                techIndex < project.tech.length - 1
+                                  ? 'border-b border-[#ffebac]/15'
+                                  : ''
+                              }`}
+                            >
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-6 inline-flex w-max items-center gap-2 rounded-full bg-[#2f2f34] px-5 py-2 text-sm text-[#ffebac] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffebac]"
+                        className="group/github mt-6 inline-flex items-center gap-1 border-t border-[#ffebac]/15 pt-3 text-sm text-[#ffebac] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffebac] md:mt-auto"
                       >
-                        View on GitHub ↗
+                        View on GitHub
+                        <span
+                          aria-hidden="true"
+                          className="transition-transform duration-150 ease-out group-hover/github:translate-x-[2px] group-hover/github:-translate-y-[2px]"
+                        >
+                          ↗
+                        </span>
                       </a>
-                    </div>
-
-                    <div className="min-h-[12rem] overflow-hidden rounded-lg border border-[#2f2f34] bg-[#2f2f34] p-2 md:min-h-0">
-                      <div
-                        className="h-full min-h-[12rem] rounded-md bg-cover bg-center md:min-h-full"
-                        style={{ backgroundImage: `url(/${project.bgImage})` }}
-                        role="img"
-                        aria-label={`${project.title} preview`}
-                      />
                     </div>
                   </motion.article>
                 ) : (

@@ -15,7 +15,7 @@
     import logo_dark from './logo_dark.png';
     import mail_icon from './mail_icon.png';
     import mail_icon_dark from './mail_icon_dark.png';
-    import profile_img from './swetha1.png';
+    import profile_img from './profile-img1.png';
     import download_icon from './download-icon.png';
     import header_bg_color from './header-bg-color.png';
     import moon_icon from './moon_icon.png';
@@ -100,10 +100,38 @@
 
     export const workData = [
         {
+            title: 'Inventory Management',
+            category: 'Full-stack',
+            description: 'A role-based inventory system with JWT auth, a stock movement ledger, and a Next.js UI that shows only what each role can do.',
+            bgImage: 'work-1.png',
+            link:'https://github.com/swetha-021/Inventory-Management',
+            tech: ['Java', 'Spring Boot', 'PostgreSQL', 'Next.js'],
+            features: [
+                'Staff, Manager, and Admin permissions on the API',
+                'Stock in/out recorded in the same transaction',
+                'Low-stock reports and an admin audit log',
+                'Search, filters, and pagination on the catalog',
+            ],
+        },
+        {
+            title: 'Depression Detection',
+            category: 'ML',
+            description: 'An NLP and machine-learning pipeline that studies social media language, sentiment, and network signals to flag users who may be at risk of depression.',
+            bgImage: 'work-2.png',
+            link:'https://github.com/swetha-021/Depression-Detection-in-Social-Media-Users',
+            tech: ['Python', 'NLP', 'Machine Learning'],
+            features: [
+                'Preprocessing and sentiment analysis on posts',
+                'Speech-act and intention classification',
+                'User-level features plus social influence signals',
+                'Model benchmarking and evaluation visuals',
+            ],
+        },
+        {
             title: 'Quantum Canvas',
             category: 'Generative',
             description: 'Quantum Entropy Art Generator using CURBy API. True quantum randomness drives each composition, so every piece is unique and cannot be replayed from a classic seed.',
-            bgImage: 'work-1.png',
+            bgImage: 'work-3.png',
             link:'https://github.com/swetha-021/Quantum-art-generator',
             tech: ['Python', 'CURBy API', 'JavaScript'],
             features: [
@@ -111,34 +139,6 @@
                 'Procedural visuals from non-classical randomness',
                 'Exportable generated artwork',
                 'Lightweight generator workflow',
-            ],
-        },
-        {
-            title: 'Inventory',
-            category: 'Full-stack',
-            description: 'Smart Inventory Management Platform. Tracks stock, updates, and catalog data in one place so teams can see what they have without a spreadsheet chase.',
-            bgImage: 'work-2.png',
-            link:'https://github.com/swetha-021/Inventory-Management',
-            tech: ['JavaScript', 'React', 'REST APIs'],
-            features: [
-                'Catalog and stock tracking',
-                'Create, update, and retire items',
-                'REST-backed data flow',
-                'Dashboard-style overview',
-            ],
-        },
-        {
-            title: 'Tenzies',
-            category: 'Game',
-            description: 'A fun dice-rolling game made with React and JavaScript. Hold matching dice, roll the rest, and race to lock a full set of the same value.',
-            bgImage: 'work-3.png',
-            link:'https://github.com/swetha-021/Tenzies',
-            tech: ['React', 'JavaScript'],
-            features: [
-                'Hold and re-roll individual dice',
-                'Win state when all faces match',
-                'Client-side game loop in React',
-                'Lightweight, no backend required',
             ],
         },
         {
@@ -155,7 +155,6 @@
                 'Playable in the browser',
             ],
         },
-        
     ]
 
     export const experienceData = [
@@ -258,5 +257,82 @@
         {
             title: 'ML',
             skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Pandas'],
+        },
+    ];
+
+    export const extrasData = [
+        {
+            id: 'api-world-2026',
+            type: 'hackathon',
+            name: 'API World Hackathon',
+            date: 'September 2026',
+            sortDate: '2026-09',
+            location: 'Virtual',
+            organizer: 'DevNetwork',
+            project: 'Look, For You',
+            description: 'A complexion-aware makeup look translator that copies liner exactly and shade-matches foundation, blush, and lipstick to your skin.',
+            link: 'https://github.com/swetha-021/Look-for-you',
+        },
+        {
+            id: 'video-agent-context-graph-2026',
+            type: 'hackathon',
+            name: 'Hack the Video Agent Context Graph',
+            date: 'July 2026',
+            sortDate: '2026-07',
+            location: 'San Francisco, CA',
+            organizer: 'HackerSquad + AWS Builder Loft',
+            result: 'Participant',
+            description: 'A one-day build of a video agent that turns raw footage into a Neo4j context graph with OpenAI, AWS Strands, and TwelveLabs.',
+            link: 'https://luma.com/hack-video-agent-context-graph-jul30-2026',
+        },
+        {
+            id: 'mongodb-build-fest-2026',
+            type: 'hackathon',
+            name: 'MongoDB.local Build Fest',
+            date: 'August 2026',
+            sortDate: '2026-08',
+            location: 'Pier 48, San Francisco, CA',
+            organizer: 'MongoDB',
+            result: 'Participant',
+            project: 'Successor',
+            description: 'A voice-based knowledge transfer system for semiconductor fab operations that captures departing expertise through conversation instead of PDFs.',
+            link: 'https://www.mongodb.com/events/mongodb-local/build-fest',
+        },
+        {
+            id: 'ai-wave-2026',
+            type: 'conference',
+            name: 'Career Connect in AI WAVE 2026',
+            date: 'June 2026',
+            sortDate: '2026-06',
+            location: 'Mountain View, CA',
+            organizer: 'KOTRA Silicon Valley',
+            result: 'Attendee',
+            description: 'Met recruiters, founders, and engineers across AI, robotics, healthcare, and automation, and left with a clearer view of the skills that matter now.',
+            link: 'https://www.linkedin.com/posts/swethaprakash21_last-week-i-had-the-opportunity-to-attend-activity-7477069997077385216-v5Tt',
+        },
+        {
+            id: 'snowflake-world-tour-2025',
+            type: 'conference',
+            name: 'Snowflake World Tour',
+            date: 'October 2025',
+            sortDate: '2025-10',
+            location: 'New York, NY',
+            organizer: 'Snowflake',
+            result: 'Attendee',
+            description: 'A first conference day of Snowflake AI Data Cloud keynotes, a SQL and Python analytics lab, and a Women in Data panel.',
+            link: 'https://www.linkedin.com/posts/swethaprakash21_i-had-the-opportunity-to-attend-the-snowflake-activity-7380424532685344768-v7Zs',
+        },
+        {
+            id: 'colorstack-codefest-2024',
+            type: 'hackathon',
+            name: 'ColorStackBU CodeFest',
+            date: 'September 2024',
+            sortDate: '2024-09',
+            location: 'Binghamton, NY',
+            organizer: 'ColorStack at Binghamton University',
+            result: 'Best UI',
+            project: 'B-Happening',
+            description: 'A campus event discovery platform designed to make it easier for students to find and engage with events in real time.',
+            link: 'https://devpost.com/software/b-happening',
         },
     ];

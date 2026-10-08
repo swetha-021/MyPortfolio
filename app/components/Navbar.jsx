@@ -11,6 +11,7 @@ const links = [
   { id: 'about', href: '#about', label: 'About me' },
   { id: 'experience', href: '#experience', label: 'Experience' },
   { id: 'work', href: '#work', label: 'My Work' },
+  { id: 'extras', href: '#extras', label: 'Extras' },
   { id: 'contact', href: '#contact', label: 'Contact me' },
 ]
 
